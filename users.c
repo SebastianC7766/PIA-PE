@@ -56,6 +56,7 @@ int find_user()
 	{
 		if (strcmp(inuser, aux.user) == 0 && strcmp(inpswd, aux.pswd) == 0)
 		{
+			fclose(arch);
 			return 1; // si estan dentro del archiv regresa un 1
 		}
 	}
