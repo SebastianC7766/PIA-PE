@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//estructura de datos de una zona
+//estructura de datos de una zona 
 typedef struct{
 	long id_zone;
 	char zone_name[20];
@@ -91,3 +91,4 @@ int val_zone(long idzone){
 	free(Vzones);
 	return 0;
 }
+
