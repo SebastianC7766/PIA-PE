@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "zonas.h"
+#include "users.h"
+#include "temp.h"
 
-void main()
+int main()
 {
+    // Variables
     int opcion = 0;
+    zone * zonas = (zone *) calloc(1, sizeof(zone));
 
     do
     {
@@ -16,18 +21,18 @@ void main()
             opcion = 0;
             do
             {
-                printf("1.Registro de zonas\n2.Salir\nINGRESE UNA OPCION: ");
+                printf("1.Registro de zona\n2.Salir\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
                 {
                 case 1:
-                    /* code */
+                    add_zone(&zonas);
                     break;
                 case 2:
                     break;
                 default:
-                    printf("1.Registro de zonas\n2.Salir\nOPCION INVALIDA, INGRESE UNA OPCION: ");
+                    printf("1.Registro de zona\n2.Salir\nOPCION INVALIDA, INGRESE UNA OPCION: ");
                     scanf(" %i", &opcion);
                     break;
                 }
@@ -43,7 +48,7 @@ void main()
                 switch (opcion)
                 {
                 case 1:
-                    /* code */
+                    ver_temp_actual();
                     break;
                 case 2:
                     /* code */
@@ -125,5 +130,5 @@ void main()
     } while (opcion != 5);
     system("pause");
 
-    return;
+    return 0;
 }
