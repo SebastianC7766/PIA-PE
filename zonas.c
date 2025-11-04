@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 // estructura de datos de una zona
 typedef struct
@@ -8,8 +9,8 @@ typedef struct
 	char zone_name[20];
 	int threshold;
 	int fan_status;
-}zone;
-
+	float current_temp;
+} zone;
 
 void print_file(zone Vzones);
 void add_zone(zone **Vzones);
@@ -31,8 +32,10 @@ void add_zone(zone **Vzones)
 	scanf("%19s", (*Vzones)[i].zone_name);
 	printf("INGRESE EL UMBRAL DE LA ZONA: ");
 	scanf("%d", &(*Vzones)[i].threshold);
-	(*Vzones)[i].fan_status = 0; // inicializa el abanico de la zona como apagado
+	(*Vzones)[i].fan_status = 0;								   // inicializa el abanico de la zona como apagado
+	(*Vzones)[i].current_temp = (float)((rand() / 100) % 15) + 20; // REVISAR PQ NO TIENE DECIMALES
 	print_file((*Vzones)[i]);
+	system("cls");
 }
 
 // funcion para leer todos los registros del archivo zonas.dat en un array

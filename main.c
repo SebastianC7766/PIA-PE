@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "zonas.h"
-#include "users.h"
-#include "temp.h"
+#include "users.c"
+#include "temp.c"
 
 int main()
 {
     // Variables
+    srand(time(NULL));
     int opcion = 0;
-    zone * zonas = (zone *) calloc(1, sizeof(zone));
+    zone *zonas = (zone *)calloc(1, sizeof(zone));
 
     do
     {
@@ -51,7 +51,7 @@ int main()
                     ver_temp_actual();
                     break;
                 case 2:
-                    /* code */
+                    activar_ventilador();
                     break;
                 case 3:
                     /* code */
@@ -68,6 +68,7 @@ int main()
                 }
 
             } while (opcion != 5);
+            opcion = 0;
             break;
         case 3:
             opcion = 0;
@@ -128,7 +129,7 @@ int main()
             break;
         }
     } while (opcion != 5);
-    system("pause");
 
+    system("cls");
     return 0;
 }
