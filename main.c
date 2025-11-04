@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "users.c"
+#include "temp.c"
 
-void main()
+int main()
 {
+    // Variables
+    srand(time(NULL));
     int opcion = 0;
+    zone *zonas = (zone *)calloc(1, sizeof(zone));
 
     do
     {
@@ -16,18 +21,18 @@ void main()
             opcion = 0;
             do
             {
-                printf("1.Registro de zonas\n2.Salir\nINGRESE UNA OPCION: ");
+                printf("1.Registro de zona\n2.Salir\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
                 {
                 case 1:
-                    /* code */
+                    add_zone(&zonas);
                     break;
                 case 2:
                     break;
                 default:
-                    printf("1.Registro de zonas\n2.Salir\nOPCION INVALIDA, INGRESE UNA OPCION: ");
+                    printf("1.Registro de zona\n2.Salir\nOPCION INVALIDA, INGRESE UNA OPCION: ");
                     scanf(" %i", &opcion);
                     break;
                 }
@@ -43,10 +48,10 @@ void main()
                 switch (opcion)
                 {
                 case 1:
-                    /* code */
+                    ver_temp_actual();
                     break;
                 case 2:
-                    /* code */
+                    activar_ventilador();
                     break;
                 case 3:
                     /* code */
@@ -63,6 +68,7 @@ void main()
                 }
 
             } while (opcion != 5);
+            opcion = 0;
             break;
         case 3:
             opcion = 0;
@@ -123,7 +129,7 @@ void main()
             break;
         }
     } while (opcion != 5);
-    system("pause");
 
-    return;
+    system("cls");
+    return 0;
 }
