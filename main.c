@@ -1,14 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "users.c"
+#include "zonas.c"
+#include <time.h>
 #include "temp.c"
 
 int main()
 {
+    SetConsoleOutputCP(CP_UTF8); //salida utf-8
+    SetConsoleCP(CP_UTF8);       //entrada utf-8
+
+    //inicio de sesion 
+    val_user();
     // Variables
     srand(time(NULL));
     int opcion = 0;
-    zone *zonas = (zone *)calloc(1, sizeof(zone));
+    zones *zonas;
+    read_zones(&zonas); // esta funcion declara el tamaño del arreglo de zonas, y si hay zonas anteriores las lee
 
     do
     {
