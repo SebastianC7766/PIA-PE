@@ -33,7 +33,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("1.Registro de zona\n2.Salir\nINGRESE UNA OPCION: ");
+                printf("1.Registro de zona.\n2.Salir.\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
@@ -44,8 +44,9 @@ int main()
                 case 2:
                     break;
                 default:
-                    printf("1.Registro de zona\n2.Salir\nOPCION INVALIDA, INGRESE UNA OPCION: ");
+                    printf("1.Registro de zona.\n2.Salir.\nOPCION INVALIDA, INGRESE UNA OPCION: ");
                     scanf(" %i", &opcion);
+                    system("cls");
                     break;
                 }
             } while (opcion != 2);
@@ -54,7 +55,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("1.Ver temperatura Actual\n2.Activar/Desactivar ventilador manualmente\n3.Ver historial de eventos\n4.Simular monitoreo en tiempo real\n5.Salir\nINGRESE UNA OPCION: ");
+                printf("1.Ver temperatura Actual.\n2.Activar/Desactivar ventilador manualmente.\n3.Ver historial de eventos.\n4.Simular monitoreo en tiempo real.\n5.Salir.\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
@@ -74,8 +75,9 @@ int main()
                 case 5:
                     break;
                 default:
-                    printf("1.Ver temperatura Actual\n2.Activar ventilador manualmente\n3.Ver historial de eventos\n4.Simular monitoreo en tiempo real\n5.Salir\nOPCION INVALIDA, INGRESE UNA OPCION VALIDA: ");
+                    printf("1.Ver temperatura Actual.\n2.Activar/Desactivar ventilador manualmente.\n3.Ver historial de eventos.\n4.Simular monitoreo en tiempo real.\n5.Salir.\nOPCION INVALIDA, INGRESE UNA OPCION VALIDA: ");
                     scanf(" %i", &opcion);
+                    system("cls");
                     break;
                 }
             } while (opcion != 5);
@@ -85,7 +87,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("1.Buscar eventos por rango de temperatura o fecha\n2.Generar reporte estadistico\n3.Exportar historial a archivo.csv\n4.Salir\nINGRESE UNA OPCION: ");
+                printf("1.Buscar eventos por rango de temperatura o fecha.\n2.Generar reporte estadistico.\n3.Exportar historial a archivo .csv.\n4.Salir.\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
@@ -102,8 +104,9 @@ int main()
                 case 4:
                     break;
                 default:
-                    printf("1.Buscar eventos por rango de temperatura o fecha\n2.Generar reporte estadistico\n3.Exportar historial a archivo.csv\n4.Salir\nOPCION INVALIDA, INGRESE UNA OPCION VALIDA: ");
+                    printf("1.Buscar eventos por rango de temperatura o fecha.\n2.Generar reporte estadistico.\n3.Exportar historial a archivo .csv.\n4.Salir.\nOPCION INVALIDA, INGRESE UNA OPCION VALIDA: ");
                     scanf(" %i", &opcion);
+                    system("cls");
                     break;
                 }
             } while (opcion != 4);
@@ -112,7 +115,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("1.Configurar umbral de temperatura por zona\n2.Restaurar configuracion por defecto por zona\n3.Salir\nINGRESE UNA OPCION: ");
+                printf("1.Configurar umbral de temperatura por zona.\n2.Restaurar configuracion por defecto por zona.\n3.Salir.\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
@@ -126,8 +129,9 @@ int main()
                 case 3:
                     break;
                 default:
-                    printf("1.Configurar umbral de temperatura por zona\n2.Restaurar configuracion por defecto por zona\n3.Salir\nOPCION INVALIDA, INGRESE UNA OPCION VALIDA: ");
+                    printf("1.Configurar umbral de temperatura por zona.\n2.Restaurar configuracion por defecto por zona.\n3.Salir.\nOPCION INVALIDA, INGRESE UNA OPCION VALIDA: ");
                     scanf(" %i", &opcion);
+                    system("cls");
                     break;
                 }
             } while (opcion != 3);
@@ -138,6 +142,7 @@ int main()
         default:
             printf("1.Zonas\n2.Control de temperaturas\n3.Consultas\n4.Configuracion\n5.Salir\nOPCION INVALIDA, INGRESE UNA NUEVA: ");
             scanf(" %i", &opcion);
+            system("cls");
             break;
         }
     } while (opcion != 5);
