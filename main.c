@@ -1,9 +1,13 @@
+#include <windows.h>
+#include <string.h>
+#include <conio.h> 
 #include <stdio.h>
+#include <time.h>
 #include <stdlib.h>
 #include "users.c"
 #include "zonas.c"
-#include <time.h>
 #include "temp.c"
+
 
 int main()
 {
@@ -11,11 +15,11 @@ int main()
     SetConsoleCP(CP_UTF8);       //entrada utf-8
 
     //inicio de sesion 
-    val_user();
+    //val_user(); por ahora comentado para hacer pruebas
     // Variables
     srand(time(NULL));
     int opcion = 0;
-    zones *zonas;
+    zone *zonas = NULL;
     read_zones(&zonas); // esta funcion declara el tamaño del arreglo de zonas, y si hay zonas anteriores las lee
 
     do
@@ -59,10 +63,10 @@ int main()
                     ver_temp_actual();
                     break;
                 case 2:
-                    activar_ventilador();
+                    activar_desactivar_ventilador();
                     break;
                 case 3:
-                    /* code */
+                    historial_eventos();
                     break;
                 case 4:
                     /* code */
@@ -130,6 +134,7 @@ int main()
             } while (opcion != 3);
             break;
         case 5:
+            free(zonas);
             break;
         default:
             printf("1.Zonas\n2.Control de temperaturas\n3.Consultas\n4.Configuracion\n5.Salir\nOPCION INVALIDA, INGRESE UNA NUEVA: ");
@@ -141,3 +146,4 @@ int main()
     system("cls");
     return 0;
 }
+
