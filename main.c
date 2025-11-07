@@ -69,7 +69,7 @@ int main()
                     historial_eventos();
                     break;
                 case 4:
-                    /* code */
+                    simular();
                     break;
                 case 5:
                     break;
