@@ -169,4 +169,43 @@ void historial_eventos(){
     system("pause");
     system("cls");
 }
+
+void simular(){
+    system("cls");
+    long id;
+    FILE *arch = fopen("zonas.dat", "rb"); // abre el archivo zonas.dat en modo lectura
+	if (arch == NULL)
+	{
+		return ;
+	}
+
+    long pos;
+    zone aux;
+    printf("INGRESE EL ID DE LA ZONA A SEGUIR: "); scanf("%ld",&id);
+    while(fread(&aux,sizeof(zone),1,arch)){
+        if(aux.id_zone == id) pos = ftell(arch) - sizeof(zone);
+    }
+    fclose(arch);
+
+    while(!kbhit()){//kbhit retorna verdadero si una tecla es presionada
+        nueva_temp(id);
+        arch = fopen("zonas.dat", "rb"); // abre el archivo zonas.dat en modo lectura
+        if (arch == NULL)
+        {
+            return ;
+        }
+        fseek(arch, pos, SEEK_SET);
+        fread(&aux,sizeof(zone),1,arch);
+        time_t tiempo_actual = time(NULL);
+        struct tm *info_tiempo = localtime(&tiempo_actual);
+        printf("[%d:%d:%d] temperatura: %.2f°C ventilador: %s\n",
+        info_tiempo->tm_hour,info_tiempo->tm_min,info_tiempo->tm_sec,aux.current_temp,(aux.fan_status==1)? "ACTIVADO":"APAGADO");
+        Sleep(3000);
+        registrar_evento(id);
+    } 
+
+    system("pause");
+    system("cls");
+}
 //gcc main.c -o main.exe
+
