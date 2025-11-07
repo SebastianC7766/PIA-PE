@@ -55,6 +55,7 @@ Aplicar conceptos de programación estructurada:
 
 ## 📊 Grafica de Menús
 
+```
  ┌─────────────────┐
  │   INICIO        │
  └───────┬─────────┘
@@ -72,7 +73,8 @@ Aplicar conceptos de programación estructurada:
       │                    │                            │                   │                │
       ▼                    ▼                            ▼                   ▼                ▼
  (Submenú Zonas)    (Submenú Control Temp.)      (Submenú Consultas)   (Submenú Config.)     FIN
- 
+ ```
+
 ---
 
 ## 🧱 Archivos Generados
