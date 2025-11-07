@@ -1,22 +1,22 @@
 #include <windows.h>
 #include <string.h>
-#include <conio.h> 
+#include <conio.h>
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+
 #include "users.c"
 #include "zonas.c"
 #include "temp.c"
 
-
 int main()
 {
-    SetConsoleOutputCP(CP_UTF8); //salida utf-8
-    SetConsoleCP(CP_UTF8);       //entrada utf-8
+    SetConsoleOutputCP(CP_UTF8); // salida utf-8
+    SetConsoleCP(CP_UTF8);       // entrada utf-8
 
-    //inicio de sesion 
-    //val_user(); por ahora comentado para hacer pruebas
-    // Variables
+    // inicio de sesion
+    // val_user(); por ahora comentado para hacer pruebas
+    //  Variables
     srand(time(NULL));
     int opcion = 0;
     zone *zonas = NULL;
@@ -54,7 +54,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("1.Ver temperatura Actual\n2.Activar ventilador manualmente\n3.Ver historial de eventos\n4.Simular monitoreo en tiempo real\n5.Salir\nINGRESE UNA OPCION: ");
+                printf("1.Ver temperatura Actual\n2.Activar/Desactivar ventilador manualmente\n3.Ver historial de eventos\n4.Simular monitoreo en tiempo real\n5.Salir\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
@@ -78,7 +78,6 @@ int main()
                     scanf(" %i", &opcion);
                     break;
                 }
-
             } while (opcion != 5);
             opcion = 0;
             break;
@@ -146,4 +145,3 @@ int main()
     system("cls");
     return 0;
 }
-
