@@ -1,44 +1,103 @@
-# PIA Programacion Estructurada
 
-Proyecto de sistema modular de simulacion del monitoreo y control de la temperatura de un invernadero.
+Simulación modular de monitoreo de temperatura por zonas en un invernadero.  
+Cada zona registra su temperatura, controla automáticamente su ventilador dependiendo de un umbral configurado, y genera un historial de eventos.
+
+---
+
+## 👥 Integrantes
+| Nombre | Matrícula |
+|-------|-----------|
+| Sebastian Calderon Carrillo | 2087472 |
+| Cesar Yahir Alonso Reyes | 2069375 |
+| Cesar Alejandro Alanis Guerrero | 20XXXXX |
+
+---
+
+## 🎯 Objetivo
+
+Aplicar conceptos de programación estructurada:
+- Estructuras
+- Punteros y memoria dinámica
+- Manejo de archivos binarios
+- Modularidad
+- Simulación mediante consola
+- Registro cronológico de eventos automáticos
+
+---
+
+## 📂 Estructura del Proyecto
+
+| Archivo | Descripción |
+|--------|-------------|
+| `main.c` | Contiene el menú principal y navegación. |
+| `zonas.c` | Manejo de registro y almacenamiento de zonas (`zonas.dat`). |
+| `temp.c` | Control de temperatura, ventiladores y registro de eventos (`eventos.dat`). |
+| `users.c` | Módulo de usuarios (opcional, actualmente deshabilitado). |
+
+---
+
+## 🏗️ Funcionalidades por Módulo
+
+### `zonas.c`
+- Registrar nuevas zonas
+- Validar IDs para evitar duplicados
+- Cargar zonas desde archivo binario
+- Guardar automáticamente cada nueva zona
+
+### `temp.c`
+- Actualización automática de temperatura simulada
+- Activación/desactivación automática de ventilador según umbral
+- Control manual del ventilador
+- Registro cronológico en `eventos.dat`
+- Simulación en tiempo real (actualiza cada 3s)
+
+---
+
+ ┌─────────────────┐
+ │   INICIO         │
+ └───────┬─────────┘
+         │
+         ▼
+ ┌───────────────────────┐
+ │ Mostrar Menú Principal │
+ └───────┬───────────────┘
+         │
+         │ OPCIÓN
+         ▼
+ ┌───────────────┬───────────────────────────┬──────────────────────┬───────────────┐
+ │1: Zonas       │2: Control de Temperatura  │3: Consultas          │4: Configuración│
+ │               │                           │                      │               │
+ └────┬──────────┴─────────┬─────────────────┴──────────┬───────────┴───────┬───────┘
+      │                     │                            │                   │
+      ▼                     ▼                            ▼                   ▼
+ (Submenú Zonas)    (Submenú Control Temp.)      (Submenú Consultas)   (Submenú Config.)
+      
+                     │
+                     ▼
+                 5: Salir
+                     │
+                     ▼
+                 ┌─────────┐
+                 │  FIN    │
+                 └─────────┘
 
 
-## Integrantes
- - Sebastian Calderon Carrillo **2087472**
- - Cesar Yahir Alonso Reyes **2069375**
- - Cesar Alejandro Alanis Guerrero **20**
+---
 
-## FAQ
+## 🧱 Archivos Generados
 
-#### Objetivo
+| Archivo | Tipo | Contenido |
+|--------|------|-----------|
+| `zonas.dat` | binario | Zonas registradas |
+| `eventos.dat` | binario | Historial de temperatura y estado del ventilador |
 
-Se buscar desarrollar un sistema modular en lenguaje C que simule el monitoreo y control de 
-temperatura en un invernadero, aplicando los conceptos fundamentales de programación 
-estructurada: estructuras, punteros, memoria dinámica, manejo de archivos, modularidad y 
-menús interactivos
+---
 
-## Modulos
--main.c (Estructura del menu)
--gestionUsuarios.c
--reportes.c
--archivo.c
+## 🚀 Compilación y Ejecución
+Nota: Este proyecto usa windows.h y conio.h, se recomiendo compilar en Windows o adaptar llamadas (Sleep, kbhit).
 
-## Funcionalidades
+```bash
+gcc main.c -o invernadero
+./invernadero
 
-### main.c
-Este modulo contiene...
 
-#### funcion(parametros)
-Esta funcion realiza...
-| Parametro | Tipo     | Descripcion                |
-| :-------- | :------- | :------------------------- |
-| `parametros` | `string` | **Required**. Este parametro es necesario|
-
-### gestionarUsuarios.c
-Este modulo contiene...
-
-### reportes.c
-Este modulo contiene...
-
-### archivo.c
-Este modulo contiene...
