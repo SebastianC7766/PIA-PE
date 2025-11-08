@@ -8,6 +8,7 @@
 #include "users.c"
 #include "zonas.c"
 #include "temp.c"
+#include "conf.c"
 
 int main()
 {
@@ -15,8 +16,8 @@ int main()
     SetConsoleCP(CP_UTF8);       // entrada utf-8
 
     // inicio de sesion
-    // val_user(); por ahora comentado para hacer pruebas
-    //  Variables
+    val_user(); //defaul user: admin pswd: admin
+    // Variables
     srand(time(NULL));
     int opcion = 0;
     zone *zonas = NULL;
@@ -121,10 +122,10 @@ int main()
                 switch (opcion)
                 {
                 case 1:
-                    /* code */
+                    mod_thr();
                     break;
                 case 2:
-                    /* code */
+                    default_zone();
                     break;
                 case 3:
                     break;
