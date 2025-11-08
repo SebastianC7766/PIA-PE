@@ -17,10 +17,10 @@ int find_user();
 // funcion principal para validar que el archivo exista y si no, lo crea con un usuario "admin" por defecto
 void val_user()
 {
-	FILE *arch = fopen("users.dat", "rb");
+	FILE *arch = fopen("binarios\\users.dat", "rb");
 	if (arch == NULL)
 	{
-		arch = fopen("users.dat", "wb"); // si no existe crea el archivo
+		arch = fopen("binarios\\users.dat", "wb"); // si no existe crea el archivo
 		user admin;
 		strcpy(admin.user, "admin");
 		strcpy(admin.pswd, "admin");
@@ -42,7 +42,7 @@ void val_user()
 // funcion para verificar que el usuario existe
 int find_user()
 {
-	FILE *arch = fopen("users.dat", "rb");
+	FILE *arch = fopen("binarios\\users.dat", "rb");
 	if (arch == NULL)
 	{
 		printf("Error al acceder al archivo");
@@ -86,7 +86,7 @@ int find_user()
 void add_user()
 {
 	user nuevo;
-	FILE *arch = fopen("users.dat", "ab");
+	FILE *arch = fopen("binarios\\users.dat", "ab");
 	if (arch == NULL)
 	{
 		printf("Error al acceder al archivo");

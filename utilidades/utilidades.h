@@ -1,0 +1,10 @@
+#include <windows.h>
+#include <string.h>
+#include <conio.h>
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include "users.c"
+#include "zonas.c"
+#include "conf.c"
+#include "consultas.c"

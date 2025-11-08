@@ -1,15 +1,4 @@
-#include <windows.h>
-#include <string.h>
-#include <conio.h>
-#include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
-
-#include "users.c"
-#include "zonas.c"
-#include "temp.c"
-#include "conf.c"
-#include "consultas.c"
+#include "utilidades/utilidades.h"
 
 int main()
 {
@@ -26,7 +15,7 @@ int main()
 
     do
     {
-        printf("1.Zonas\n2.Control de temperaturas\n3.Consultas\n4.Configuracion\n5.Salir\nINGRESE UNA OPCION: ");
+        printf("MENU\n1.Zonas\n2.Control de temperaturas\n3.Consultas\n4.Configuracion\n5.Salir\nINGRESE UNA OPCION: ");
         scanf(" %i", &opcion);
         system("cls");
         switch (opcion)
@@ -35,7 +24,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("1.Registro de zona.\n2.Salir.\nINGRESE UNA OPCION: ");
+                printf("SUBMENU: ZONAS\n1.Registro de zona.\n2.Salir.\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
@@ -46,8 +35,8 @@ int main()
                 case 2:
                     break;
                 default:
-                    printf("1.Registro de zona.\n2.Salir.\nOPCION INVALIDA, INGRESE UNA OPCION: ");
-                    scanf(" %i", &opcion);
+                    printf("OPCION INVALIDA INGRESE UNA CORRECTA\n");
+                    system("pause");
                     system("cls");
                     break;
                 }
@@ -57,7 +46,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("1.Ver temperatura Actual.\n2.Activar/Desactivar ventilador manualmente.\n3.Ver historial de eventos.\n4.Simular monitoreo en tiempo real.\n5.Salir.\nINGRESE UNA OPCION: ");
+                printf("SUBMENU: CONTROL DE TEMPERATURAS\n1.Ver temperatura actual.\n2.Activar/Desactivar ventilador manualmente.\n3.Ver historial de eventos.\n4.Simular monitoreo en tiempo real.\n5.Salir.\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
@@ -77,8 +66,8 @@ int main()
                 case 5:
                     break;
                 default:
-                    printf("1.Ver temperatura Actual.\n2.Activar/Desactivar ventilador manualmente.\n3.Ver historial de eventos.\n4.Simular monitoreo en tiempo real.\n5.Salir.\nOPCION INVALIDA, INGRESE UNA OPCION VALIDA: ");
-                    scanf(" %i", &opcion);
+                    printf("OPCION INVALIDA INGRESE UNA CORRECTA\n");
+                    system("pause");
                     system("cls");
                     break;
                 }
@@ -89,7 +78,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("1.Buscar eventos por rango de temperatura o fecha.\n2.Generar reporte estadistico.\n3.Exportar historial a archivo .csv.\n4.Salir.\nINGRESE UNA OPCION: ");
+                printf("SUBMENU: CONSULTAS\n1.Buscar eventos por rango de temperatura o fecha.\n2.Generar reporte estadistico.\n3.Exportar historial a archivo .csv.\n4.Salir.\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
@@ -106,8 +95,8 @@ int main()
                 case 4:
                     break;
                 default:
-                    printf("1.Buscar eventos por rango de temperatura o fecha.\n2.Generar reporte estadistico.\n3.Exportar historial a archivo .csv.\n4.Salir.\nOPCION INVALIDA, INGRESE UNA OPCION VALIDA: ");
-                    scanf(" %i", &opcion);
+                    printf("OPCION INVALIDA INGRESE UNA CORRECTA\n");
+                    system("pause");
                     system("cls");
                     break;
                 }
@@ -117,7 +106,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("1.Configurar umbral de temperatura por zona.\n2.Restaurar configuracion por defecto por zona.\n3.Salir.\nINGRESE UNA OPCION: ");
+                printf("SUBMENU: CONFIGURACION\n1.Configurar umbral de temperatura por zona.\n2.Restaurar configuracion por defecto por zona.\n3.Salir.\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
@@ -131,8 +120,8 @@ int main()
                 case 3:
                     break;
                 default:
-                    printf("1.Configurar umbral de temperatura por zona.\n2.Restaurar configuracion por defecto por zona.\n3.Salir.\nOPCION INVALIDA, INGRESE UNA OPCION VALIDA: ");
-                    scanf(" %i", &opcion);
+                    printf("OPCION INVALIDA INGRESE UNA CORRECTA\n");
+                    system("pause");
                     system("cls");
                     break;
                 }
@@ -142,8 +131,8 @@ int main()
             free(zonas);
             break;
         default:
-            printf("1.Zonas\n2.Control de temperaturas\n3.Consultas\n4.Configuracion\n5.Salir\nOPCION INVALIDA, INGRESE UNA NUEVA: ");
-            scanf(" %i", &opcion);
+            printf("OPCION INVALIDA INGRESE UNA CORRECTA\n");
+            system("pause");
             system("cls");
             break;
         }
