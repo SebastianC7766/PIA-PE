@@ -4,6 +4,7 @@ typedef struct
 	long id_zone;
 	char zone_name[20];
 	int threshold;
+	int def_thr;
 	int fan_status;
 	float current_temp;
 } zone;
@@ -28,8 +29,9 @@ void add_zone(zone **Vzones)
 	scanf("%19s", (*Vzones)[i].zone_name);
 	printf("INGRESE EL UMBRAL DE LA ZONA: ");
 	scanf("%d", &(*Vzones)[i].threshold);
-	(*Vzones)[i].fan_status = 0;										   // inicializa el abanico de la zona como apagado
-	(*Vzones)[i].current_temp = ((float)(rand() % 1501) / 100.0f) + 20.0f; // Genera un numero aleatorio entre 20 y 35
+	(*Vzones)[i].fan_status = 0;								   // inicializa el abanico de la zona como apagado
+	(*Vzones)[i].current_temp = ((float)(rand() % 1500) / 100.0f) + 20.0f; // REVISAR PQ NO TIENE DECIMALES
+	(*Vzones)[i].def_thr = (*Vzones)[i].threshold;
 	print_file((*Vzones)[i]);
 	system("cls");
 }
