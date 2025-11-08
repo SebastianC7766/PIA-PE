@@ -6,7 +6,7 @@ int main()
     SetConsoleCP(CP_UTF8);       // entrada utf-8
 
     // inicio de sesion
-    val_user(); //defaul user: admin pswd: admin
+    val_user(); // defaul user: admin pswd: admin
     // Variables
     srand(time(NULL));
     int opcion = 0;
