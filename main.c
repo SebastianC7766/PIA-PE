@@ -9,6 +9,7 @@
 #include "zonas.c"
 #include "temp.c"
 #include "conf.c"
+#include "consultas.c"
 
 int main()
 {
@@ -94,13 +95,13 @@ int main()
                 switch (opcion)
                 {
                 case 1:
-                    /* code */
+                    buscar_eventos();
                     break;
                 case 2:
-                    /* code */
+                    reporte();
                     break;
                 case 3:
-                    /* code */
+                    historial_csv();
                     break;
                 case 4:
                     break;
