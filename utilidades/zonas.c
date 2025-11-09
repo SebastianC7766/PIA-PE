@@ -1,17 +1,14 @@
-
-
-void mod_fan_status(long id);
-void nueva_temp(long id);
-void registrar_evento(long id);
-void print_file(zone Vzones);
-void add_zone(zone **Vzones);
+/* Forward declarations so functions used before their definitions are known to the compiler */
 int contar(int key);
-void read_zones(zone **Vzones);
 int val_zone(long idzone);
-
+void print_file(zone Vzones);
+void read_zones(zone **Vzones);
+void nueva_temp(long id);
+void mod_fan_status(long id);
+void registrar_evento(long id);
 
 void add_zone(zone **Vzones)
-{ 
+{
     int i = contar(0);
     *Vzones = (zone *)realloc(*Vzones, (i + 1) * sizeof(zone));
     printf("INGRESE EL ID DE LA ZONA: ");
@@ -23,8 +20,8 @@ void add_zone(zone **Vzones)
     scanf("%19s", (*Vzones)[i].zone_name);
     printf("INGRESE EL UMBRAL DE LA ZONA: ");
     scanf("%d", &(*Vzones)[i].threshold);
-    (*Vzones)[i].fan_status = 0; 
-    (*Vzones)[i].current_temp = ((float)(rand() % 1500) / 100.0f) + 20.0f; 
+    (*Vzones)[i].fan_status = 0;
+    (*Vzones)[i].current_temp = ((float)(rand() % 1500) / 100.0f) + 20.0f;
     (*Vzones)[i].def_thr = (*Vzones)[i].threshold;
     print_file((*Vzones)[i]);
     system("cls");
@@ -32,7 +29,7 @@ void add_zone(zone **Vzones)
 
 void read_zones(zone **Vzones)
 {
-    FILE *arch = fopen("binarios\\zonas.dat", "rb"); 
+    FILE *arch = fopen("binarios\\zonas.dat", "rb");
     if (arch == NULL)
     {
         *Vzones = (zone *)calloc(1, sizeof(zone));
@@ -49,16 +46,15 @@ void read_zones(zone **Vzones)
     return;
 }
 
-
 void print_file(zone Vzones)
 {
-    FILE *arch = fopen("binarios\\zonas.dat", "a+b"); 
+    FILE *arch = fopen("binarios\\zonas.dat", "a+b");
     if (arch == NULL)
     {
         printf("ERROR AL ACCEDER AL ARCHIVO\n");
         return;
     }
-    fwrite(&Vzones, sizeof(zone), 1, arch); 
+    fwrite(&Vzones, sizeof(zone), 1, arch);
     fclose(arch);
 }
 
@@ -76,10 +72,9 @@ int contar(int key)
     if (key == 1)
         rewind(arch);
     else
-        fclose(arch); 
+        fclose(arch);
     return acc;
 }
-
 
 int val_zone(long idzone)
 {
@@ -163,10 +158,9 @@ void activar_desactivar_ventilador()
     system("cls");
 }
 
-
 void nueva_temp(long id)
 {
-    FILE *arch = fopen("binarios\\zonas.dat", "r+b"); 
+    FILE *arch = fopen("binarios\\zonas.dat", "r+b");
     if (arch == NULL)
     {
         return;
@@ -190,10 +184,9 @@ void nueva_temp(long id)
     }
 }
 
-// modifica el estado del ventilador en zonas.dat
 void mod_fan_status(long id)
 {
-    FILE *arch = fopen("binarios\\zonas.dat", "r+b"); // abre el archivo zonas.dat en modo lectura y escritura
+    FILE *arch = fopen("binarios\\zonas.dat", "r+b");
     if (arch == NULL)
     {
         return;
@@ -215,10 +208,9 @@ void mod_fan_status(long id)
     }
 }
 
-// funcion para registrar un evento
 void registrar_evento(long id)
 {
-    FILE *arch = fopen("binarios\\zonas.dat", "rb"); // abre el archivo zonas.dat en modo lectura
+    FILE *arch = fopen("binarios\\zonas.dat", "rb");
     if (arch == NULL)
     {
         return;
@@ -245,7 +237,7 @@ void registrar_evento(long id)
         }
     }
     fclose(arch);
-    arch = fopen("binarios\\eventos.dat", "ab"); // abre el archivo zonas.dat en modo agregar
+    arch = fopen("binarios\\eventos.dat", "ab");
     if (arch == NULL)
     {
         return;
@@ -254,10 +246,9 @@ void registrar_evento(long id)
     fclose(arch);
 }
 
-// funcion que muestra el historial de todos los eventos
 void historial_eventos()
 {
-    FILE *arch = fopen("binarios\\eventos.dat", "rb"); // abre el archivo zonas.dat en modo agregar
+    FILE *arch = fopen("binarios\\eventos.dat", "rb");
     if (arch == NULL)
     {
         return;
@@ -302,9 +293,9 @@ void simular()
     printf("OPRIMA CUALQUIER TECLA PARA TERMINAR.\n");
 
     while (!kbhit())
-    { 
+    {
         nueva_temp(id);
-        arch = fopen("binarios\\zonas.dat", "rb"); 
+        arch = fopen("binarios\\zonas.dat", "rb");
         if (arch == NULL)
         {
             return;

@@ -7,8 +7,8 @@
 
 typedef struct
 {
-	char user[20];
-	char pswd[20];
+    char user[20];
+    char pswd[20];
 } user;
 
 typedef struct
@@ -22,7 +22,7 @@ typedef struct
 } zone;
 
 typedef struct
-{ 
+{
     long zone;
     int dia, mes, anio;
     int hora, min, seg;

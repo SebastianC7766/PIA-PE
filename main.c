@@ -2,8 +2,8 @@
 
 int main()
 {
-    SetConsoleOutputCP(CP_UTF8); 
-    SetConsoleCP(CP_UTF8);     
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     val_user();
     srand(time(NULL));
     int opcion = 0;
@@ -12,7 +12,7 @@ int main()
 
     do
     {
-        printf("MENU\n1.Zonas\n2.Control de temperaturas\n3.Consultas\n4.Configuracion\n5.Salir\nINGRESE UNA OPCION: ");
+        printf("MENU\n1.Zonas.\n2.Control de temperaturas.\n3.Consultas.\n4.Configuracion.\n5.Salir.\nINGRESE UNA OPCION: ");
         scanf(" %i", &opcion);
         system("cls");
         switch (opcion)
@@ -103,7 +103,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("SUBMENU: CONFIGURACION\n1.Configurar umbral de temperatura por zona.\n2.Restaurar configuracion por defecto por zona.\n4-Agregar usuario\n4.Salir.\nINGRESE UNA OPCION: ");
+                printf("SUBMENU: CONFIGURACION\n1.Configurar umbral de temperatura por zona.\n2.Restaurar configuracion por defecto por zona.\n3.Agregar usuario.\n4.Salir.\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)

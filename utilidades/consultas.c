@@ -70,7 +70,7 @@ void reporte()
     printf("REPORTE ESTADISTICO:\n\n");
     zone *zonas = NULL;
     read_zones(&zonas);
-    FILE *arch = fopen("binarios\\eventos.dat", "rb"); 
+    FILE *arch = fopen("binarios\\eventos.dat", "rb");
     if (arch == NULL)
     {
         return;
@@ -133,7 +133,7 @@ void reporte()
 
 void historial_csv()
 {
-    FILE *arch = fopen("binarios\\eventos.dat", "rb"); 
+    FILE *arch = fopen("binarios\\eventos.dat", "rb");
     if (arch == NULL)
     {
         return;

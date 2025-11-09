@@ -7,9 +7,8 @@ Cada zona registra su temperatura, controla automáticamente su ventilador depen
 ## 👥 Integrantes
 | Nombre | Matrícula |
 |-------|-----------|
-| Sebastian Calderon Carrillo | 2087472 |
 | Cesar Yahir Alonso Reyes | 2069375 |
-| Cesar Alejandro Alanis Guerrero | 20XXXXX |
+| Sebastian Calderon Carrillo | 2087472 |
 
 ---
 
@@ -92,5 +91,3 @@ Nota: Este proyecto usa windows.h y conio.h, se recomiendo compilar en Windows o
 ```bash
 gcc main.c -o invernadero
 ./invernadero
-
-

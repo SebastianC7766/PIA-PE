@@ -18,9 +18,9 @@ int find_user()
 	char c;
 	int i = 0;
 	while ((c = getch()) != '\r')
-	{ 
+	{
 		if (c == '\b')
-		{ 
+		{
 			if (i > 0)
 			{
 				i--;
@@ -62,9 +62,9 @@ void val_user()
 	while (find_user() == 0)
 	{
 		printf("\nCREDENCIALES NO VALIDAS, INTENTELO DE NUEVO EN 3 SEGUNDOS\n");
-		Sleep(3000);  
+		Sleep(3000);
 		system("cls");
-	} 
+	}
 	printf("\nINICIO DE SESION VALIDO, BIENVENIDO\n");
 	Sleep(1000);
 	system("cls");
