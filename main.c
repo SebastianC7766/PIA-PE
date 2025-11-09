@@ -2,16 +2,13 @@
 
 int main()
 {
-    SetConsoleOutputCP(CP_UTF8); // salida utf-8
-    SetConsoleCP(CP_UTF8);       // entrada utf-8
-
-    // inicio de sesion
-    val_user(); // defaul user: admin pswd: admin
-    // Variables
+    SetConsoleOutputCP(CP_UTF8); 
+    SetConsoleCP(CP_UTF8);     
+    val_user();
     srand(time(NULL));
     int opcion = 0;
     zone *zonas = NULL;
-    read_zones(&zonas); // esta funcion declara el tamaño del arreglo de zonas, y si hay zonas anteriores las lee
+    read_zones(&zonas);
 
     do
     {
@@ -106,7 +103,7 @@ int main()
             opcion = 0;
             do
             {
-                printf("SUBMENU: CONFIGURACION\n1.Configurar umbral de temperatura por zona.\n2.Restaurar configuracion por defecto por zona.\n3.Salir.\nINGRESE UNA OPCION: ");
+                printf("SUBMENU: CONFIGURACION\n1.Configurar umbral de temperatura por zona.\n2.Restaurar configuracion por defecto por zona.\n4-Agregar usuario\n4.Salir.\nINGRESE UNA OPCION: ");
                 scanf(" %i", &opcion);
                 system("cls");
                 switch (opcion)
@@ -118,14 +115,17 @@ int main()
                     default_zone();
                     break;
                 case 3:
+                    add_user();
+                    break;
+                case 4:
                     break;
                 default:
-                    printf("OPCION INVALIDA INGRESE UNA CORRECTA\n");
+                    printf("OPCION INVALIDA, INGRESE UNA OPCION CORRECTA\n");
                     system("pause");
                     system("cls");
                     break;
                 }
-            } while (opcion != 3);
+            } while (opcion != 4);
             break;
         case 5:
             free(zonas);

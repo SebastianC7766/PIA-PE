@@ -1,7 +1,7 @@
 void mod_thr()
 {
     system("cls");
-    FILE *arch = fopen("binarios\\zonas.dat", "r+b"); // abre el archivo zonas.dat en modo lectura y escritura
+    FILE *arch = fopen("binarios\\zonas.dat", "r+b"); 
     if (arch == NULL)
     {
         return;
@@ -36,7 +36,7 @@ void mod_thr()
 void default_zone()
 {
     system("cls");
-    FILE *arch = fopen("binarios\\zonas.dat", "r+b"); // abre el archivo zonas.dat en modo lectura y escritura
+    FILE *arch = fopen("binarios\\zonas.dat", "r+b"); 
     if (arch == NULL)
     {
         return;

@@ -1,6 +1,6 @@
 void buscar_eventos()
 {
-    FILE *arch = fopen("binarios\\eventos.dat", "rb"); // abre el archivo zonas.dat en modo agregar
+    FILE *arch = fopen("binarios\\eventos.dat", "rb");
     if (arch == NULL)
     {
         return;
@@ -70,7 +70,7 @@ void reporte()
     printf("REPORTE ESTADISTICO:\n\n");
     zone *zonas = NULL;
     read_zones(&zonas);
-    FILE *arch = fopen("binarios\\eventos.dat", "rb"); // abre el archivo zonas.dat en modo agregar
+    FILE *arch = fopen("binarios\\eventos.dat", "rb"); 
     if (arch == NULL)
     {
         return;
@@ -133,7 +133,7 @@ void reporte()
 
 void historial_csv()
 {
-    FILE *arch = fopen("binarios\\eventos.dat", "rb"); // abre el archivo zonas.dat en modo agregar
+    FILE *arch = fopen("binarios\\eventos.dat", "rb"); 
     if (arch == NULL)
     {
         return;
@@ -155,8 +155,6 @@ void historial_csv()
         fprintf(csv, "%ld,%02d,%02d,%.2f,%s\n",
                 aux.zone, aux.hora, aux.min, aux.temp, (aux.fan == 1) ? "ACTIVADO" : "APAGADO");
     }
-
-    // system("start EXCEL.EXE historial.csv");  opcional abrirlo al crearlo
     printf("Archivo historial.csv creado correctamente.\n");
     fclose(arch);
     fclose(csv);
